@@ -1,14 +1,16 @@
-import { collection, getDocs } from "firebase/firestore/lite";
 import "./App.css";
-import { useFirestore } from "./Hooks/useFirestore";
+import { AuthProvider } from "./Hooks/useAuth";
+import MUI from "./MUI";
 
 const App = () => {
-  const firestore = useFirestore();
-
   return (
-    <div>
-      <h1>waaaat</h1>
-    </div>
+    <AuthProvider>
+      <MUI>
+        <div>
+          <h1>waaaat</h1>
+        </div>
+      </MUI>
+    </AuthProvider>
   );
 };
 
